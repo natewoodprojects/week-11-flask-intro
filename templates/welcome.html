@@ -12,5 +12,15 @@
       or <a href="https://app.pluralsight.com"></a>
     </p>
     <img src="/static/flasklogo.png" alt="" />
+    <h2>Flash Cards</h2>
+    <ul>
+      {% for card in cards %}
+      <li>
+        <a href="{{ url_for('card_view', index=card.index) }}">
+          {{ card.question }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
